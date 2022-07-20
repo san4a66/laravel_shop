@@ -10,7 +10,7 @@ services:
             - "8876:80"
         depends_on:
             - app
-        container_name: project_nginx
+        container_name: shop_nginx
 
     app:
         build:
