@@ -7,11 +7,10 @@ use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class EditController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Tag $tag)
     {
-        $tags = Tag::all();
-        return view('tag.index', compact('tags'));
+        return view('tag.edit', compact('tag'));
     }
 }

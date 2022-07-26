@@ -7,11 +7,12 @@ use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class DeleteController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Tag $tag)
     {
-        $tags = Tag::all();
-        return view('tag.index', compact('tags'));
+            $tag->delete();
+
+            return redirect()->route('tag.index');
     }
 }
