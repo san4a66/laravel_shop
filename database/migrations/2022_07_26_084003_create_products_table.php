@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('count');
             $table->boolean('is_published')->default(true);
 
-            $table->foreignId('user_id')->nullable()->index()->constrained('users');
+
             $table->foreignId('category_id')->nullable()->index()->constrained('categories');
 
 
