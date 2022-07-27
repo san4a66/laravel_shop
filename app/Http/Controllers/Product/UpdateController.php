@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Tag\UpdateRequest;
-use App\Models\Tag;
+use App\Http\Requests\Product\UpdateRequest;
+use App\Models\Product;
 
 class UpdateController extends Controller
 {
-    public function __invoke(UpdateRequest $request, Tag $tag)
+    public function __invoke(UpdateRequest $request, Product $product)
     {
       $data = $request->validated();
-      $tag->update($data);
+      $product ->update($data);
 
-      return view('tag.show', compact('tag'));
+      return view('product.show', compact('product'));
     }
 }

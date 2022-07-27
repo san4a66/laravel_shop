@@ -35,6 +35,12 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Наименование</th>
+                                    <th>Описание</th>
+                                    <th>Контент</th>
+                                    <th>Цена</th>
+                                    <th>Количество</th>
+                                    <th>Изображение</th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -42,6 +48,17 @@
                                     <tr>
                                         <td>{{$product->id}}</td>
                                         <td><a href="{{route('product.show', $product->id)}}">{{$product->title}}</a>
+                                        </td>
+                                        <td>{{$product->description}}</td>
+                                        <td>{{$product->content}}</td>
+                                        <td>{{$product->price}}</td>
+                                        <td>{{$product->count}}</td>
+                                        <td>
+                                            <div class="w-25 mb-3">
+                                                <img src="{{asset('storage/' .$product->preview_image)}}"
+                                                     alt="preview_image"
+                                                     class="w-50">
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

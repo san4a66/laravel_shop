@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Тэг</h1>
+                    <h1 class="m-0">Продукт</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -27,9 +27,10 @@
                     <div class="card">
                         <div class="card-header d-flex p-3">
                             <div class="mr-3">
-                            <a href="{{route('tag.edit', $tag->id)}}" class="btn btn-primary">Редактировать</a>
+                                <a href="{{route('product.edit', $product->id)}}"
+                                   class="btn btn-primary">Редактировать</a>
                             </div>
-                            <form action="{{route('tag.delete', $tag->id)}}" method="post">
+                            <form action="{{route('product.delete', $product->id)}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <input type="submit" class="btn btn-danger" value="Удалить">
@@ -40,11 +41,47 @@
                                 <tbody>
                                 <tr>
                                     <td>ID</td>
-                                    <td>{{$tag->id}}</td>
+                                    <td>{{$product->id}}</td>
                                 </tr>
                                 <tr>
                                     <td>Наименование</td>
-                                    <td>{{$tag->title}}</td>
+                                    <td>{{$product->title}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Описание</td>
+                                    <td>{{$product->description}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Контент</td>
+                                    <td>{{$product->content}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Цена</td>
+                                    <td>{{$product->price}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Количество</td>
+                                    <td>{{$product->count}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Изображение</td>
+                                    <td>
+                                        <div class="w-25 mb-3">
+                                            <img src="{{asset('storage/' .$product->preview_image)}}"
+                                                 alt="preview_image"
+                                                 class="w-50">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Категория</td>
+                                    <td></td>
+
+                                </tr>
+                                <tr>
+                                    <td>Тэги</td>
+                                    <td></td>
+
                                 </tr>
                                 </tbody>
                             </table>

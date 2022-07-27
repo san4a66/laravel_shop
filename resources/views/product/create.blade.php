@@ -26,20 +26,20 @@
                 <form action="{{route('product.store')}}" method="post" class="w-50" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <input type="text" name="title" class="form-control" placeholder="Наименование">
+                        <input type="text" value="{{old('title')}}" name="title" class="form-control" placeholder="Наименование">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="description" class="form-control" placeholder="Описание">
+                        <input type="text" value="{{old('description')}}" name="description" class="form-control" placeholder="Описание">
                     </div>
                     <div class="form-group">
-                        <textarea name="content" class="form-control" cols="30" rows="10 "
-                                  placeholder="Контент"></textarea>
+                        <textarea name="content"  class="form-control" cols="30" rows="10 "
+                                  placeholder="Контент">{{old('content')}}</textarea>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="price" class="form-control" placeholder="Цена">
+                        <input type="text" value="{{old('price')}}" name="price" class="form-control" placeholder="Цена">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="count" class="form-control" placeholder="Количество">
+                        <input type="text" value="{{old('count')}}"  name="count" class="form-control" placeholder="Количество">
                     </div>
 
                     <div class="form-group">

@@ -25,13 +25,13 @@ class StoreRequest extends FormRequest
     {
         return [
             'title'=>'required|string',
-            'description' => 'required',
-            'content' => 'required',
-            'preview_image' => 'required',
-            'price' => 'required',
-            'count' => 'required',
-            'is_published' => 'nullable',
-            'category_id' => 'nullable',
+            'description' => 'required|string',
+            'content' => 'required|string',
+            'preview_image' => 'required|file',
+            'price' => 'required|between:0,9999.99',
+            'count' => 'required|integer',
+            'is_published' => 'nullable|integer',
+            'category_id' => 'nullable|integer',
             'tags' => 'nullable|array',
             'colors' => 'nullable|array',
 

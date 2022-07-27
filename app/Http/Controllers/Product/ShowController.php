@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Models\Tag;
-use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ShowController extends Controller
 {
-    public function __invoke(Tag $tag)
+    public function __invoke(Product $product)
     {
-        return view('tag.show', compact('tag'));
+
+        return view('product.show', compact('product'));
     }
 }
