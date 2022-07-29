@@ -9,7 +9,7 @@
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
-auth.json
+auth.jsongi
 npm-debug.log
 yarn-error.log
 /.idea
