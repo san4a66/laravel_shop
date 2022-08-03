@@ -75,11 +75,28 @@
                     </div>
 
                     <div class="form-group">
+                        <select name="group_id" class="form-control select2" style="width: 100%;">
+                            <option selected="selected" disabled>Выберите группу</option>
+                            @foreach($groups as $group)
+                                <option value="{{$group->id}}"
+                                    {{$group->id == $product->group_id ? ' selected' : ''}}
+                                >{{$group->title}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <select name="tags[]" class="tags" multiple="multiple" data-placeholder="Выберите тэг" style="width: 100%;">
                             @foreach($tags as $tag)
-                                <option value="{{$tag->id}}"
-                                    {{$tag->id == $product->tag_id}}
-                                    >{{$tag->title}}</option>
+                                <option {{is_array($product->tags->pluck('id')->toArray()) && in_array($tag->id,$product->tags->pluck('id')->toArray()) ? ' selected' : ''}} value="{{$tag->id}}">{{$tag->title}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <select name="colors[]" class="colors" multiple="multiple" data-placeholder="Выберите тэг" style="width: 100%;">
+                            @foreach($colors as $color)
+                                <option {{is_array($product->colors->pluck('id')->toArray()) && in_array($color->id,$product->colors->pluck('id')->toArray()) ? ' selected' : ''}} value="{{$color->id}}">{{$color->title}}</option>
                             @endforeach
                         </select>
                     </div>

@@ -166,6 +166,14 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{route('group.index')}}" class="nav-link">
+                            <i class="nav-icon fas fa-th-list"></i>
+                            <p>
+                                Группы
+                            </p>
+                        </a>
+                    </li>
+                    <li>
                         <a href="{{route('color.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-palette"></i>
                             <p>

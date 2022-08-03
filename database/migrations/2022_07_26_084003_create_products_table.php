@@ -25,7 +25,7 @@ return new class extends Migration
 
 
             $table->foreignId('category_id')->nullable()->index()->constrained('categories');
-
+            $table->foreignId('group_id')->nullable()->index()->constrained('groups');
 
 
             $table->timestamps();
