@@ -75,12 +75,7 @@
                                 </tr>
                                 <tr>
                                     <td>Категория</td>
-                                    <td></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Тэги</td>
-                                    <td></td>
+                                    <td>{{$product->category->title}}</td>
 
                                 </tr>
                                 </tbody>

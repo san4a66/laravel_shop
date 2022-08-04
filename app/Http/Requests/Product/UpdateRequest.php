@@ -27,10 +27,11 @@ class UpdateRequest extends FormRequest
             'title'=>'required|string',
             'description' => 'required|string',
             'content' => 'required|string',
-            'preview_image' => 'required|file',
+            'preview_image' => 'nullable|file',
             'price' => 'required|between:0,9999.99',
             'count' => 'required|integer',
-            'category_id' => 'nullable|integer',
+            'category_id' => 'required|integer',
+            'group_id' => 'required|integer',
             'tags' => 'nullable|array',
             'colors' => 'nullable|array',
         ];
