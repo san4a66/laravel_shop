@@ -13,31 +13,37 @@ class Product extends Model
     protected $guarded = false;
 
 
-    public  function category()
+    public function category()
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
-    public  function group()
+    public function group()
     {
         return $this->belongsTo(Group::class, 'group_id', 'id');
     }
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class,'product_tags', 'product_id',
+        return $this->belongsToMany(Tag::class, 'product_tags', 'product_id',
             'tag_id');
     }
 
     public function colors()
     {
-        return $this->belongsToMany(Color::class,'color_products', 'product_id',
+        return $this->belongsToMany(Color::class, 'color_products', 'product_id',
             'color_id');
     }
 
 
-    public  function getImageUrlAttribute()
+    public function getImageUrlAttribute()
     {
         return url('storage/' . $this->preview_image);
     }
+
+    public function productImages()
+    {
+        return $this->hasMany(ProductImage::class, 'product_id', 'id');
+    }
+
 }
